@@ -7,10 +7,10 @@
 ```
 sd-ft/
 ├── dataset.py          　
-├── generate_conti.py     
+├── generate_conti.py
 ├── makegif.py
-├── train_real.py         
-├── train_stream.py      
+├── train_real.py
+├── train_stream.py
 ```
 - 各ファイルの説明
     - dataset.py\
@@ -24,7 +24,7 @@ sd-ft/
 
     - train_real.py\
     stablediffuisonをloraを用いてファインチューニングするコード。主にtrain_lora関数内でファインチューンしている。トレインするためのループ、テストデータを用いてそのモデルを検証するための二つのループがある
-        
+
         ```
         optimizer = AdamW(
             list(pipeline.unet.parameters()) + list(pipeline.vae.decoder.parameters()),
@@ -41,3 +41,20 @@ sd-ft/
     - train_stream.py\
     今回発表しなかったが、stablediffuisonよりも高速で画像を生成できるstreamdiffusonも同様にloraでファインチューニングした。train_realと同様の構造であるが、仕様が少し違い調節するのが難しかった。
 
+## 生成された画像の評価(小崎)
+- ファイル構成
+```
+eval/
+├── eval.py
+├── eval_all.py
+├── plots/
+│   ├── ...
+```
+
+- 各ファイルの説明
+    - eval.py\
+    生成された画像と元の画像の特徴量をコサイン類似度で比較し、プロットする。ハードコーディングしていた画像へのパスは適当な例に変更している。
+    - eval_all.py\
+    元の画像と複数の生成された画像を比較して、全てをまとめてプロットする。ハードコーディングしていた画像へのパスは適当な例に変更している。
+    - plots/\
+    今回の実験で生成された画像と元の画像の特徴量を比較した結果のプロットが保存されている。
