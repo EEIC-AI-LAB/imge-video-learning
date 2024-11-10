@@ -1,6 +1,5 @@
-# 全動画について、3秒間のフレームを取得し、その中で差分が大きいフレーム20個を抽出する
+# 全動画について、今のフレームをinput、次のフレームをtargetとして保存する
 from pathlib import Path
-import os
 import shutil
 
 

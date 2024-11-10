@@ -1,3 +1,4 @@
+# stable diffusionを使ってLoRAを学習するサンプルコード（失敗）
 import torch
 from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
 from diffusers.loaders import AttnProcsLayers
