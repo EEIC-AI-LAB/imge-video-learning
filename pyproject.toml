@@ -22,6 +22,7 @@ diffusers = "^0.30.3"
 transformers = "^4.45.2"
 accelerate = "^1.0.1"
 opencv-python = "^4.10.0.84"
+pillow = "^11.0.0"
 
 
 [build-system]

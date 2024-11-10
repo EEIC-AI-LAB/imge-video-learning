@@ -7,7 +7,8 @@ source_dir = Path.cwd() / "UCF50"
 new_folder = Path.cwd() / "data/videos"
 new_folder.mkdir(exist_ok=True)
 
-pattern = "v_[A-Za-z]+_g0[1-3]_c01\.avi"
+# pattern = "v_[A-Za-z]+_g0[1-3]_c01\.avi"
+pattern = "v_BaseballPitch+_g[0-9]+_c[0-9]+\.avi"
 
 for action_type_dir in source_dir.iterdir():
     print(action_type_dir)

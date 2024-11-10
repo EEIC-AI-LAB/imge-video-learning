@@ -1,3 +1,4 @@
+# stable diffusionを使って画像生成するサンプルコード
 import os
 from diffusers import StableDiffusionPipeline, EulerDiscreteScheduler
 import torch
