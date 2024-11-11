@@ -1,4 +1,7 @@
 # 高速動画生成AI
+
+使用したデータ類：[このgoogleドライブ](https://drive.google.com/drive/folders/1h0aLfaVYRGtghsWe6N4Q6GHUyqaAzcKl)に置いています
+
 ## 概要
 - 一つ前の時刻の画像データを元に一つ後の時刻の画像生成を繰り返し、画像をつなぎ合わせて動画を生成する。
 - VAEをファインチューニングして画像生成を試みたディレクトリ(vae)、stablediffusionをloraでimg2imgでファインチューニングしたディレクトリ(sd-ft)、できた画像データと正解データとの誤差を評価するディレクトリ(eval)の3つを提出する。
