@@ -77,7 +77,7 @@ vae/
     1枚のフレーム画像と次のフレーム画像をペアにして返す custom dataloader クラス。
 
 
-## dataset_processing(井澤)
+## 学習に使用するデータセットの前処理(井澤)
 - ファイル構成
 ```
 dataset_processing/
