@@ -1,5 +1,6 @@
+# 現在のフレームと次のフレームのペアを返すデータセットクラス
 import os
-from torchvision import datasets, transforms
+from torchvision import datasets
 from PIL import Image
 
 

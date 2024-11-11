@@ -1,4 +1,4 @@
-# 50種のアクションから各種3つの動画を抽出する
+# UCF50データセットのbaseball_pitchの動画をtrain, evaluation, testに分割する
 from pathlib import Path
 import random
 import re

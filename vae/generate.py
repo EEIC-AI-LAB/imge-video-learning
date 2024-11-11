@@ -1,10 +1,9 @@
+# 学習済みのVAEモデルからtest用画像について次のフレームを生成
 import os
 
 import torch
-from PIL import Image
 from torch.utils.data import DataLoader
 from torchvision import transforms
-from torchvision.utils import save_image
 
 from model_vae import VAE
 from paired_loader import PairedImageFolder
@@ -51,18 +50,7 @@ def test():
             recon_image = recon.cpu()
             inversed_recon_image = inverse_transform(recon_image)
             
-            # print(recon.shape)
-            # recon_image = (recon_image + 1) / 2
-            # print(recon_image.shape)
-            # recon_image = recon_image.squeeze(0)
-            # print(recon_image.shape)
-            # image = recon_image.permute(1, 2, 0).numpy() * 255
-            # print(image.shape)
-            # print(image)
-            # image = Image.fromarray(image.astype('uint8'))
             inversed_recon_image.save(f'generated_images/genimg_{i}.png')
-            # save_image(recon_image, f'generated_images/genimg_{i}.png')
-            break
         
         print(f"Test loss: {test_loss / len(test_loader)}")
 

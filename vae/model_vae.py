@@ -1,3 +1,4 @@
+# VAE model definition
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -27,7 +28,6 @@ class VAE(nn.Module):
             nn.Flatten(),
         )
         
-        # Calculate the flattened dimension
         self.flatten_dim = 256 * self.h_dim * self.w_dim
         
         self.fc_mu = nn.Linear(self.flatten_dim, latent_dim)

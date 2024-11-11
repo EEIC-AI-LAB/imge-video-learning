@@ -58,3 +58,53 @@ eval/
     元の画像と複数の生成された画像を比較して、全てをまとめてプロットする。ハードコーディングしていた画像へのパスは適当な例に変更している。
     - plots/\
     今回の実験で生成された画像と元の画像の特徴量を比較した結果のプロットが保存されている。
+
+## VAEによる次フレーム学習(井澤)
+- ファイル構成
+```
+vae/
+├── generate.py
+├── model_vae.py
+├── paired_loader.py
+```
+
+- 各ファイルの説明
+    - generate.py\
+    学習済みのVAEモデルを使用してtest用データセットの各画像から次のフレーム画像を生成する。
+    - model_vae.py\
+    学習に使用したVAEモデルを定義。
+    - paired_loader.py\
+    1枚のフレーム画像と次のフレーム画像をペアにして返す custom dataloader クラス。
+
+
+## dataset_processing(井澤)
+- ファイル構成
+```
+dataset_processing/
+├── extract_video.py
+├── make_pair_dataset.py
+├── resize_images.py
+├── resize_images_square.py
+├── split_videos.py
+├── video_to_90_frame.py
+├── video_to_frame_dataset.py
+├── video_to_frame.py
+```
+
+- 各ファイルの説明
+    - extract_vide.py\
+    UCF50データセットの50種のアクションから各種3つの動画を抽出する
+    - make_pair_dataset.py\
+    全動画について、今のフレームをinput、次のフレームをtargetとして保存する
+    - resize_images.py\
+    画像のリサイズを行う関数(VAEの学習に使用)
+    - resize_images_square.py\
+    フォルダ内の画像をリサイズして、指定サイズに合わせて背景を白で埋める(正方形の画像になるようにする)
+    - split_videos.py\
+    UCF50データセットのbaseball_pitchの動画をtrain, evaluation, testに分割する
+    - video_to_90_frame.py\
+    指定した動画について、3秒間のフレームを取得し、その中で差分が大きいフレーム30個を抽出する
+    - video_to_frame_dataset.py\
+    train, eval, testの全動画について、3秒間のフレームを取得し、その中で差分が大きいフレーム30個を抽出する
+    - video_to_frame.py\
+    全動画について、3秒間のフレームを取得し、その中で差分が大きいフレーム20個を抽出する(video_to_frame_dataset.pyとほぼ同じ)

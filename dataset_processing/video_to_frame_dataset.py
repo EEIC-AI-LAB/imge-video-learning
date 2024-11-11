@@ -1,4 +1,4 @@
-# 全動画について、3秒間のフレームを取得し、その中で差分が大きいフレーム20個を抽出する
+# train, eval, testの全動画について、3秒間のフレームを取得し、その中で差分が大きいフレーム30個を抽出する
 from pathlib import Path
 import os
 import numpy as np
